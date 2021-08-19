@@ -1,4 +1,4 @@
-package aula.projeto_programacao;
+package trabalho;
 
 import java.io.BufferedReader;
 import java.io.File;
