@@ -3,46 +3,39 @@ package trabalho;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-
+import javax.swing.JOptionPane;
 
 public class ModuloLeitura {
 
-  public File arq;
-  
-  public void CarregarArq(String nome){
-    
-    try{
-      arq = new File(nome+".txt");
-      if(arq.exists()==false){
-        System.out.print("esse arquivo nao existe!");
-        
-      }
-    }catch (Exception e){
-      e.printStackTrace();
+    public File arquivo;
+
+    public void carregarArq(String nome) {
+        try {
+            arquivo = new File(nome + ".txt");
+            if (arquivo.exists() == false) {
+                JOptionPane.showMessageDialog(null, "O arquivo não existe!!!", "Tente Novamente!", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-  }
-  
 
- public String ler_arq(){
-     try{
-       
-       FileReader leitor = new FileReader(arq);
-       BufferedReader leitorBuf = new BufferedReader(leitor);
-       
-       String texto = "";
-       
-       String lin = leitorBuf.readLine();
-       
-       while (lin != null){
-         texto += lin + "\n";
-         lin = leitorBuf.readLine();
-         
-       }
-     }catch (Exception e){
-       e.printStackTrace();
-     }
-     return null;
+    public String lerArquivo() {
+        try {
+            FileReader leitor = new FileReader(arquivo);
+            BufferedReader leitorBuf = new BufferedReader(leitor);
+            String texto = "";
+            String linha = leitorBuf.readLine();
+
+            while (linha != null) {
+                texto += linha + "\n";
+                linha = leitorBuf.readLine();
+            }
+            return texto;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
-   }
-
-
+}

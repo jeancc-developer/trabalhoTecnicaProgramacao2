@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author jeanc
@@ -27,21 +29,60 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        enviarMensagem = new javax.swing.JButton();
+        lerMensagem = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        enviarMensagem.setText("Enviar a mensagem");
+        enviarMensagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enviarMensagemActionPerformed(evt);
+            }
+        });
+
+        lerMensagem.setText("Ler a mensagem");
+        lerMensagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lerMensagemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(enviarMensagem)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(lerMensagem)
+                .addGap(76, 76, 76))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(161, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(enviarMensagem)
+                    .addComponent(lerMensagem))
+                .addGap(116, 116, 116))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void enviarMensagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarMensagemActionPerformed
+        EnviarMensagem proximaJanela = new EnviarMensagem();
+        proximaJanela.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_enviarMensagemActionPerformed
+
+    private void lerMensagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lerMensagemActionPerformed
+        LerMensagem proximaJanela = new LerMensagem();
+        proximaJanela.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_lerMensagemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +120,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton enviarMensagem;
+    private javax.swing.JButton lerMensagem;
     // End of variables declaration//GEN-END:variables
 }
