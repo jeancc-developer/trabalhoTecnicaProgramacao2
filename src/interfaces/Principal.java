@@ -5,8 +5,6 @@
  */
 package interfaces;
 
-import java.awt.event.ActionListener;
-
 /**
  *
  * @author jeanc

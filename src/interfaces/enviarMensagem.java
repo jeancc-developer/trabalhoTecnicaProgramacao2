@@ -5,7 +5,6 @@
  */
 package interfaces;
 
-import javafx.scene.control.Alert;
 import javax.swing.JOptionPane;
 import trabalho.ModuloEscrita;
 
@@ -76,7 +75,7 @@ public class EnviarMensagem extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
                 .addGap(144, 144, 144))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
