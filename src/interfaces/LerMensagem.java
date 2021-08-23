@@ -135,8 +135,11 @@ public class LerMensagem extends javax.swing.JFrame {
 
     private void carregarMensagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carregarMensagemActionPerformed
         leitura.carregarArq(textCodigo.getText());
-        mensagem.setText(leitura.lerArquivo());
-
+        if (leitura.arquivo.exists()){
+            mensagem.setText(leitura.lerArquivo());
+        } else {
+            mensagem.setText("Não existe arquivo!");
+        }
     }//GEN-LAST:event_carregarMensagemActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed

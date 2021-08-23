@@ -17,6 +17,7 @@ public class ModuloLeitura {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            
         }
     }
 
